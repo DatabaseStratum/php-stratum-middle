@@ -6,7 +6,7 @@ namespace SetBased\Stratum\Exception;
 /**
  * Exception for (syntax) errors in SQL statements.
  */
-interface SqlErrorException extends DataLayerException
+interface QueryErrorException extends DataLayerException
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

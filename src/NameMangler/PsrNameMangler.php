@@ -16,6 +16,9 @@ class PsrNameMangler implements NameMangler
    * @param string $routineName The name of the stored routine.
    *
    * @return string
+   *
+   * @since 4.0.0
+   * @api
    */
   public static function getMethodName(string $routineName): string
   {
@@ -29,6 +32,9 @@ class PsrNameMangler implements NameMangler
    * @param string $parameterName The name of the parameter in the stored routine.
    *
    * @return string
+   *
+   * @since 4.0.0
+   * @api
    */
   public static function getParameterName(string $parameterName): string
   {

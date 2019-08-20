@@ -22,7 +22,7 @@ class ResultException extends RuntimeException
   /**
    * The expected number selected of rows selected.
    *
-   * @var string
+   * @var int[]
    */
   private $expectedRowCount;
 
@@ -37,11 +37,14 @@ class ResultException extends RuntimeException
   /**
    * Object constructor.
    *
-   * @param string $expectedRowCount The expected number of rows selected.
+   * @param int[]  $expectedRowCount The expected number of rows selected.
    * @param int    $actualRowCount   The actual number of rows selected.
    * @param string $message          The SQL query
+   *
+   * @since 4.0.0
+   * @api
    */
-  public function __construct(string $expectedRowCount, int $actualRowCount, string $message)
+  public function __construct(array $expectedRowCount, int $actualRowCount, string $message)
   {
     parent::__construct('%s', self::message($expectedRowCount, $actualRowCount, $message));
 
@@ -55,6 +58,9 @@ class ResultException extends RuntimeException
    * Returns the actual number of selected rows.
    *
    * @return int
+   *
+   * @since 4.0.0
+   * @api
    */
   public function getActualNumberRows(): int
   {
@@ -65,9 +71,12 @@ class ResultException extends RuntimeException
   /**
    * Returns the expected number of selected rows.
    *
-   * @return string
+   * @return int[]
+   *
+   * @since 4.0.0
+   * @api
    */
-  public function getExpectedNumberRows(): string
+  public function getExpectedNumberRows(): array
   {
     return $this->expectedRowCount;
   }
@@ -75,6 +84,9 @@ class ResultException extends RuntimeException
   //--------------------------------------------------------------------------------------------------------------------
   /**
    * @inheritdoc
+   *
+   * @since 4.0.0
+   * @api
    */
   public function getName()
   {
@@ -86,6 +98,9 @@ class ResultException extends RuntimeException
    * Returns the executed SQL query.
    *
    * @return string
+   *
+   * @since 4.0.0
+   * @api
    */
   public function getQuery(): string
   {
@@ -96,19 +111,22 @@ class ResultException extends RuntimeException
   /**
    * Composes the exception message.
    *
-   * @param string $expectedRowCount The expected number of rows selected.
+   * @param int[]  $expectedRowCount The expected number of rows selected.
    * @param int    $actualRowCount   The actual number of rows selected.
    * @param string $query            The SQL query.
    *
    * @return string
+   *
+   * @since 4.0.0
+   * @api
    */
-  private function message(string $expectedRowCount, int $actualRowCount, string $query): string
+  private function message(array $expectedRowCount, int $actualRowCount, string $query): string
   {
     $query = trim($query);
 
     $message = 'Wrong number of rows selected.';
     $message .= "\n";
-    $message .= sprintf("Expected number of rows: %s.\n", $expectedRowCount);
+    $message .= sprintf("Expected number of rows: %s.\n", implode(', ', $expectedRowCount));
     $message .= sprintf("Actual number of rows: %s.\n", $actualRowCount);
     $message .= 'Query:';
     $message .= (strpos($query, "\n")!==false) ? "\n" : ' ';

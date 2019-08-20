@@ -16,6 +16,9 @@ interface NameMangler
    * @param string $routineName The name of the stored routine.
    *
    * @return string
+   *
+   * @since 4.0.0
+   * @api
    */
   static function getMethodName(string $routineName): string;
 
@@ -26,6 +29,9 @@ interface NameMangler
    * @param string $parameterName The name of the parameter in the stored routine.
    *
    * @return string
+   *
+   * @since 4.0.0
+   * @api
    */
   static function getParameterName(string $parameterName): string;
 

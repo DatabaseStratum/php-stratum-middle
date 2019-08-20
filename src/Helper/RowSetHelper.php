@@ -21,7 +21,7 @@ class RowSetHelper
    *
    * @return array
    *
-   * @since 1.0.0
+   * @since 4.0.0
    * @api
    */
   public static function filter(array $rowSet, string $columnName, $value): array
@@ -50,7 +50,7 @@ class RowSetHelper
    *
    * @return int
    *
-   * @since 1.0.0
+   * @since 4.0.0
    * @api
    */
   public static function findInRowSet(array $rowSet, string $columnName, $value): int
@@ -75,7 +75,7 @@ class RowSetHelper
    *
    * @return int|null
    *
-   * @since 1.0.0
+   * @since 4.0.0
    * @api
    */
   public static function searchInRowSet(array $rowSet, string $columnName, $value): ?int

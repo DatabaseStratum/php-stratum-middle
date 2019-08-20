@@ -6,9 +6,9 @@ namespace SetBased\Stratum\Exception;
 use SetBased\Exception\RuntimeException;
 
 /**
- * Exception to be thrown when loading of a stored routine is not possible.
+ * Exception for situations where the execution of s SQL query has failed.
  */
-class RoutineLoaderException extends RuntimeException
+abstract class DataLayerException extends RuntimeException
 {
   // Nothing to implement.
 }

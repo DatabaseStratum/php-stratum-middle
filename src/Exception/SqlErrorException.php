@@ -6,7 +6,7 @@ namespace SetBased\Stratum\Exception;
 /**
  * Exception for (syntax) errors in SQL statements.
  */
-abstract class SqlErrorException extends DataLayerException
+interface SqlErrorException extends DataLayerException
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -19,7 +19,7 @@ abstract class SqlErrorException extends DataLayerException
    * @since 4.0.0
    * @api
    */
-  abstract public function styledQuery(string $style = 'error'): array;
+  public function styledQuery(string $style = 'error'): array;
 
   //--------------------------------------------------------------------------------------------------------------------
 }

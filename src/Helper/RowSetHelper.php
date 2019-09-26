@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Stratum\Helper;
+namespace SetBased\Stratum\Middle\Helper;
 
 use SetBased\Exception\LogicException;
 

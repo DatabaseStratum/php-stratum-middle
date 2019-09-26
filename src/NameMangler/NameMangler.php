@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Stratum\NameMangler;
+namespace SetBased\Stratum\Middle\NameMangler;
 
 /**
  * Interface for mangling routine names to method names and stored routine parameter names to parameters names in

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Stratum\NameMangler;
+namespace SetBased\Stratum\Middle\NameMangler;
 
 /**
  * A name mangler for stored routines and parameters names creating method and parameter names that confirm to

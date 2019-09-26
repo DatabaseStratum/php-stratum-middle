@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Stratum\Exception;
+namespace SetBased\Stratum\Middle\Exception;
 
 /**
  * Exception for (syntax) errors in SQL statements.

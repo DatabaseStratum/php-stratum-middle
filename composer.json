@@ -16,12 +16,12 @@
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Stratum\\": "src/"
+      "SetBased\\Stratum\\Middle\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "SetBased\\Stratum\\Test\\": "test/"
+      "SetBased\\Stratum\\Middle\\Test\\": "test/"
     }
   },
   "config": {

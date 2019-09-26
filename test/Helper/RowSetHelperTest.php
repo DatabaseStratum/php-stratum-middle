@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Stratum\Test\Helper;
+namespace SetBased\Stratum\Middle\Test\Helper;
 
 use PHPUnit\Framework\TestCase;
-use SetBased\Stratum\Helper\RowSetHelper;
+use SetBased\Stratum\Middle\Helper\RowSetHelper;
 
 /**
  * Test cases for class RowSetHelper.

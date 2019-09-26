@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Stratum;
+namespace SetBased\Stratum\Middle;
 
 /**
- * Interface for defining classes for handling large result sets.
+ * Interface for handling large result sets.
  */
 interface BulkHandler
 {

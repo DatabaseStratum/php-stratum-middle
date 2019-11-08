@@ -88,7 +88,7 @@ class ResultException extends RuntimeException
    * @since 4.0.0
    * @api
    */
-  public function getName()
+  public function getName(): string
   {
     return 'Wrong row count';
   }

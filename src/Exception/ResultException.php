@@ -46,7 +46,7 @@ class ResultException extends RuntimeException
    */
   public function __construct(array $expectedRowCount, int $actualRowCount, string $message)
   {
-    parent::__construct('%s', self::message($expectedRowCount, $actualRowCount, $message));
+    parent::__construct(self::message($expectedRowCount, $actualRowCount, $message));
 
     $this->expectedRowCount = $expectedRowCount;
     $this->actualRowCount   = $actualRowCount;

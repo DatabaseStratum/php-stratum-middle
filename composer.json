@@ -4,10 +4,9 @@
   "keywords": [
     "PhpStratum"
   ],
-  "type": "library",
   "license": "MIT",
   "require": {
-    "php": ">=7.3.0",
+    "php": ">=7.3",
     "setbased/exception": "^2.1"
   },
   "require-dev": {
@@ -25,6 +24,7 @@
     }
   },
   "config": {
-    "bin-dir": "bin/"
+    "bin-dir": "bin/",
+    "sort-packages": true
   }
 }

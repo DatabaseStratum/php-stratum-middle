@@ -8,7 +8,7 @@ use SetBased\Exception\NamedException;
 /**
  * Exception for situations where an attempt to connect to a database (server) failed.
  */
-interface ConnectionErrorException extends NamedException
+interface ConnectFailedException extends NamedException
 {
   // Nothing to implement.
 }

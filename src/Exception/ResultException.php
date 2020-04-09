@@ -9,7 +9,7 @@ use SetBased\Exception\RuntimeException;
  * Exception for situations where the result (set) of a query does not meet the expectations. Either a mismatch between
  * the actual and expected numbers of rows selected or an unexpected NULL value was selected.
  */
-class ResultException extends RuntimeException
+class ResultException extends RuntimeException implements DataLayerException
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

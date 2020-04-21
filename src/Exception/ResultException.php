@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace SetBased\Stratum\Middle\Exception;
 
-use SetBased\Exception\RuntimeException;
+use SetBased\Exception\LogicException;
 
 /**
  * Exception for situations where the result (set) of a query does not meet the expectations. Either a mismatch between
  * the actual and expected numbers of rows selected or an unexpected NULL value was selected.
  */
-class ResultException extends RuntimeException implements DataLayerException
+class ResultException extends LogicException implements DataLayerException
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="php-stratum-middle" default="build" basedir=".">
-
-    <target name="build">
-        <echo message="noting to do."/>
-    </target>
-
-    <!-- Run composer update -->
+    <!-- Update dependencies -->
     <target name="update">
-        <exec command="composer update" checkreturn="true" passthru="true"/>
+        <!-- Update PHP packages -->
+        <exec executable="composer" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="update"/>
+        </exec>
+
+        <!-- Show outdated packages -->
+        <exec executable="composer" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="outdated"/>
+            <arg value="--direct"/>
+        </exec>
     </target>
 
     <!-- Runs all unit tests -->
     <target name="unit">
         <exec command="bin/phpunit" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="build">
+        <echo message="noting to do."/>
     </target>
 </project>

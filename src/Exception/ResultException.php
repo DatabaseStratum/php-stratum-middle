@@ -55,6 +55,34 @@ class ResultException extends LogicException implements DataLayerException
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
+   * Composes the exception message.
+   *
+   * @param int[]  $expectedRowCount The expected number of rows selected.
+   * @param int    $actualRowCount   The actual number of rows selected.
+   * @param string $query            The SQL query.
+   *
+   * @return string
+   *
+   * @since 4.0.0
+   * @api
+   */
+  private static function message(array $expectedRowCount, int $actualRowCount, string $query): string
+  {
+    $query = trim($query);
+
+    $message = 'Wrong number of rows selected.';
+    $message .= "\n";
+    $message .= sprintf("Expected number of rows: %s.\n", implode(', ', $expectedRowCount));
+    $message .= sprintf("Actual number of rows: %s.\n", $actualRowCount);
+    $message .= 'Query:';
+    $message .= (strpos($query, "\n")!==false) ? "\n" : ' ';
+    $message .= $query;
+
+    return $message;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
    * Returns the actual number of selected rows.
    *
    * @return int
@@ -105,34 +133,6 @@ class ResultException extends LogicException implements DataLayerException
   public function getQuery(): string
   {
     return $this->query;
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
-   * Composes the exception message.
-   *
-   * @param int[]  $expectedRowCount The expected number of rows selected.
-   * @param int    $actualRowCount   The actual number of rows selected.
-   * @param string $query            The SQL query.
-   *
-   * @return string
-   *
-   * @since 4.0.0
-   * @api
-   */
-  private function message(array $expectedRowCount, int $actualRowCount, string $query): string
-  {
-    $query = trim($query);
-
-    $message = 'Wrong number of rows selected.';
-    $message .= "\n";
-    $message .= sprintf("Expected number of rows: %s.\n", implode(', ', $expectedRowCount));
-    $message .= sprintf("Actual number of rows: %s.\n", $actualRowCount);
-    $message .= 'Query:';
-    $message .= (strpos($query, "\n")!==false) ? "\n" : ' ';
-    $message .= $query;
-
-    return $message;
   }
 
   //--------------------------------------------------------------------------------------------------------------------

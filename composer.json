@@ -6,12 +6,12 @@
   ],
   "license": "MIT",
   "require": {
-    "php": ">=7.3",
+    "php": ">=7.4",
     "setbased/exception": "^2.1"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.0",
-    "phing/phing": "^2.0"
+    "phpunit/phpunit": "^9.5.0",
+    "phing/phing": "^2.16.3"
   },
   "autoload": {
     "psr-4": {

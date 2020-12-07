@@ -17,21 +17,21 @@ class ResultException extends LogicException implements DataLayerException
    *
    * @var int
    */
-  private $actualRowCount;
+  private int $actualRowCount;
 
   /**
    * The expected number selected of rows selected.
    *
    * @var int[]
    */
-  private $expectedRowCount;
+  private array $expectedRowCount;
 
   /**
    * The executed SQL query.
    *
    * @var string
    */
-  private $query;
+  private string $query;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**

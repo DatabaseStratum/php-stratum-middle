@@ -1,9 +1,9 @@
 language: php
 php:
   - '7.4'
+  - '8.0'
 
 install:
-  - rm -f composer.lock
   - composer self-update
   - composer update
 

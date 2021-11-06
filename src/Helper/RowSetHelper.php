@@ -10,14 +10,48 @@ use SetBased\Exception\LogicException;
  *
  * In this class all comparisons are done witch strict identical operators (i.e. === and !==).
  */
-class RowSetHelper
+final class RowSetHelper
 {
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns an array with only the values of a column in a row set. Key association is maintained.
+   *
+   * @param array  $rows       The row set.
+   * @param string $columnName The column name (or in PHP terms the key in a row (i.e. array) in the row set).
+   *
+   * @return array
+   */
+  public static function extractAsArray(array $rows, string $columnName): array
+  {
+    $values = [];
+    foreach ($rows as $key => $row)
+    {
+      $values[$key] = $row[$columnName];
+    }
+
+    return $values;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns an array with all distinct values of a column in a row set.
+   *
+   * @param array  $rows       The row set.
+   * @param string $columnName The column name (or in PHP terms the key in a row (i.e. array) in the row set).
+   *
+   * @return array
+   */
+  public static function extractAsSet(array $rows, string $columnName): array
+  {
+    return array_values(array_unique(self::extractAsArray($rows, $columnName)));
+  }
+
   //--------------------------------------------------------------------------------------------------------------------
   /**
    * Returns a subset of a row set for which each row a column has a specific value.
    *
    * @param array[] $rows       The row set.
-   * @param string  $columnName The column name (or in PHP terms the key in an row (i.e. array) in the row set).
+   * @param string  $columnName The column name (or in PHP terms the key in a row (i.e. array) in the row set).
    * @param mixed   $value      The value to be found.
    * @param bool    $negate     If true each row in the subset the column has not the specific value.
    *
@@ -47,7 +81,7 @@ class RowSetHelper
    * when the value is not found.
    *
    * @param array[] $rows       The row set.
-   * @param string  $columnName The column name (or in PHP terms the key in an row (i.e. array) in the row set).
+   * @param string  $columnName The column name (or in PHP terms the key in a row (i.e. array) in the row set).
    * @param mixed   $value      The specified value to be found.
    * @param bool    $negate     If true returns the key of the first row for which the column has not the specified
    *                            value.
@@ -59,7 +93,7 @@ class RowSetHelper
    */
   public static function findInRowSet(array $rows, string $columnName, $value, bool $negate = false): int
   {
-    $key = static::searchInRowSet($rows, $columnName, $value, $negate);
+    $key = self::searchInRowSet($rows, $columnName, $value, $negate);
     if ($key===null)
     {
       throw new LogicException("Value '%s' not found", $value);
@@ -74,7 +108,7 @@ class RowSetHelper
    * found.
    *
    * @param array[] $rows       The row set.
-   * @param string  $columnName The column name (or in PHP terms the key in an row (i.e. array) in the row set).
+   * @param string  $columnName The column name (or in PHP terms the key in a row (i.e. array) in the row set).
    * @param mixed   $value      The value to be found.
    * @param bool    $negate     If true returns the key of the first row for which the column has not the specified
    *                            value.

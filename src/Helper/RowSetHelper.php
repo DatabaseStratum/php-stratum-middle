@@ -60,7 +60,7 @@ final class RowSetHelper
    * @since 4.0.0
    * @api
    */
-  public static function filter(array $rows, string $columnName, $value, bool $negate = false): array
+  public static function filter(array $rows, string $columnName, mixed $value, bool $negate = false): array
   {
     $ret = [];
 
@@ -91,7 +91,7 @@ final class RowSetHelper
    * @since 4.0.0
    * @api
    */
-  public static function findInRowSet(array $rows, string $columnName, $value, bool $negate = false): int
+  public static function findInRowSet(array $rows, string $columnName, mixed $value, bool $negate = false): int
   {
     $key = self::searchInRowSet($rows, $columnName, $value, $negate);
     if ($key===null)
@@ -118,7 +118,7 @@ final class RowSetHelper
    * @since 4.0.0
    * @api
    */
-  public static function searchInRowSet(array $rows, string $columnName, $value, bool $negate = false): ?int
+  public static function searchInRowSet(array $rows, string $columnName, mixed $value, bool $negate = false): ?int
   {
     foreach ($rows as $key => $row)
     {

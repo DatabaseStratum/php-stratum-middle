@@ -75,7 +75,7 @@ class ResultException extends LogicException implements DataLayerException
     $message .= sprintf("Expected number of rows: %s.\n", implode(', ', $expectedRowCount));
     $message .= sprintf("Actual number of rows: %s.\n", $actualRowCount);
     $message .= 'Query:';
-    $message .= (strpos($query, "\n")!==false) ? "\n" : ' ';
+    $message .= (str_contains($query, "\n")) ? "\n" : ' ';
     $message .= $query;
 
     return $message;

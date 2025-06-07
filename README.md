@@ -9,7 +9,6 @@ The glue between a PhpStratum backend and your application.
 <th>Legal</th>
 <th>Release</th>
 <th>Tests</th>
-<th>Code</th>
 </tr>
 </thead>
 <tbody>
@@ -26,9 +25,6 @@ The glue between a PhpStratum backend and your application.
 <td>
 <a href="https://github.com/DatabaseStratum/php-stratum-middle/actions/workflows/unit.yml"><img src="https://github.com/DatabaseStratum/php-stratum-middle/actions/workflows/unit.yml/badge.svg" alt="Build Status"/></a><br/>
 <a href="https://codecov.io/gh/DatabaseStratum/php-stratum-middle"><img src="https://codecov.io/gh/DatabaseStratum/php-stratum-middle/branch/master/graph/badge.svg" alt="Code Coverage"/></a>
-</td>
-<td>
-<a href="https://scrutinizer-ci.com/g/DatabaseStratum/php-stratum-middle/?branch=master"><img src="https://scrutinizer-ci.com/g/DatabaseStratum/php-stratum-middle/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"/></a>
 </td>
 </tr>
 </tbody>
